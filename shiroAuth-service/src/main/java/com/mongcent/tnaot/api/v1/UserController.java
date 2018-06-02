@@ -93,16 +93,16 @@ public class UserController {
     @GetMapping("/addUser")
     public String addUser() {
         Permission permission1 = new Permission();
-        permission1.setPermission("create");
+        permission1.setPermission("create1");
         Permission permission2 = new Permission();
-        permission2.setPermission("update");
+        permission2.setPermission("update1");
 
         Role role = new Role();
         role.setPermissions(Arrays.asList(permission1, permission2));
-        role.setRoleName("admin");
+        role.setRoleName("admin1");
 
         User user = new User();
-        user.setName("aaa");
+        user.setName("aaa1");
         user.setPassword(123456);
         user.setRoles(Arrays.asList(role));
 

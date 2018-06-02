@@ -1,7 +1,15 @@
 package com.mongcent.tnaot.model;
 
-import javax.persistence.*;
 import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Role {
@@ -12,7 +20,7 @@ public class Role {
     private String roleName;
     @ManyToOne(fetch = FetchType.EAGER)
     private User user;
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "role")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "role")
     private List<Permission> permissions;
 
     public Long getId() {
